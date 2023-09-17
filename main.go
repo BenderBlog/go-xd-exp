@@ -32,7 +32,6 @@ func GbkToUtf8(s []byte) ([]byte, error) {
 
 func get_data(data *Payload) ([]byte, error) {
 	client := resty.New()
-	client.SetProxy("http://localhost:8888")
 	client.SetRedirectPolicy(resty.NoRedirectPolicy())
 	resp, err := client.R().
 		SetBody(
